@@ -14,7 +14,7 @@ app.use(express.json());
 app.use(cors());
 
 //Connect to DB
-db();
+// db();
 
 app.use("/api/transactions", transRoutes);
 app.use("/api/user", userRoutes);
