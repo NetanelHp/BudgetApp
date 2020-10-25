@@ -13,6 +13,4 @@ const connectDB = async () => {
   }
 };
 
-//shin
-
 module.exports = connectDB;
