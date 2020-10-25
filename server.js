@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 require("dotenv").config({ path: "config/.env" });
-const PORT = process.env.PORT;
 const cors = require("cors");
 const db = require("./config/db");
 
@@ -28,4 +27,4 @@ app.get("*", (req, res) => {
 });
 
 //Listen Port
-app.listen(PORT || 4000, console.log(`The app is running on port ${PORT}`));
+app.listen(process.env.PORT || 4000, console.log(`The app is running`));
