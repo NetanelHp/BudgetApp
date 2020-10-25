@@ -14,14 +14,10 @@ app.use(express.json());
 app.use(cors());
 
 //Connect to DB
-// db();
+db();
 
 app.use("/api/transactions", transRoutes);
 app.use("/api/user", userRoutes);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("front/build"));
-}
-
 //Listen Port
-app.listen(4000, console.log(`The app is running on port 4000`));
+app.listen(PORT || 4000, console.log(`The app is running on port ${PORT}`));
