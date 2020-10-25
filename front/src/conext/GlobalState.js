@@ -39,7 +39,7 @@ export const GlobalProvider = ({ children }) => {
       setAuthToken(localStorage.token);
     }
     try {
-      const res = await axios.get("http://localhost:4000/api/user/auth");
+      const res = await axios.get("/api/user/auth");
 
       dispatchUser({
         type: "USER_LOADED",
@@ -56,7 +56,7 @@ export const GlobalProvider = ({ children }) => {
   const login = async (user) => {
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/user/login",
+        "/api/user/login",
         JSON.stringify(user),
         config
       );
@@ -88,7 +88,7 @@ export const GlobalProvider = ({ children }) => {
   const getTransactions = async (id) => {
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/transactions",
+        "/api/transactions",
         JSON.stringify(id),
         config
       );
@@ -107,7 +107,7 @@ export const GlobalProvider = ({ children }) => {
 
   const deleteTransaction = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/api/transactions/${id}`);
+      await axios.delete(`/api/transactions/${id}`);
 
       dispatchTrans({
         type: "DELETE_TRANSACTION",
@@ -124,7 +124,7 @@ export const GlobalProvider = ({ children }) => {
   const addTransaction = async (transaction) => {
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/transactions/add",
+        "/transactions/add",
         JSON.stringify(transaction),
         config
       );
