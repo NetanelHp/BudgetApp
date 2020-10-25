@@ -12,7 +12,7 @@
     "server": "nodemon server",
     "client": "npm start --prefix front",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroko-postbuild": "npm start && cd front && npm install && npm run build"
+    "heroko-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix front && npm run build --prefix front"
   },
   "author": "",
   "license": "ISC",
