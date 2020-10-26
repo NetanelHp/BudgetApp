@@ -59,11 +59,7 @@ const Register = () => {
           },
         };
 
-        await axios.post(
-          "http://localhost:5000/api/user/register",
-          JSON.stringify(newUser),
-          config
-        );
+        await axios.post("/api/user/register", JSON.stringify(newUser), config);
         alert("Register Success");
         setRegistered(true);
       } catch (err) {
