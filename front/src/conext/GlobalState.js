@@ -123,7 +123,11 @@ export const GlobalProvider = ({ children }) => {
 
   const addTransaction = async (transaction) => {
     try {
-      const res = await axios.post("123", JSON.stringify(transaction), config);
+      const res = await axios.post(
+        "/api/transactions/add",
+        JSON.stringify(transaction),
+        config
+      );
       dispatchTrans({
         type: "ADD_TRANSACTION",
         payload: res.data.data,
