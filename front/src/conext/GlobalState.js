@@ -124,7 +124,7 @@ export const GlobalProvider = ({ children }) => {
   const addTransaction = async (transaction) => {
     try {
       const res = await axios.post(
-        "/transactions/add",
+        "api/transactions/add",
         JSON.stringify(transaction),
         config
       );
